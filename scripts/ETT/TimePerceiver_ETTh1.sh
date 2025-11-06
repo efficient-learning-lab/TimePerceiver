@@ -1,0 +1,111 @@
+export CUDA_VISIBLE_DEVICES=0
+
+model_name=TimePerceiver
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1_384_96 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 384 \
+  --label_len 0 \
+  --pred_len 96 \
+  --enc_in 7 \
+  --des 'Exp' \
+  --d_model 256 \
+  --d_ff 512 \
+  --itr 1 \
+  --num_latents 32 \
+  --latent_dim 64 \
+  --latent_d_ff 128 \
+  --dropout 0.2 \
+  --standard 0 \
+  --generalized 1 \
+  --use_latent 1 \
+  --num_latent_blocks 1 \
+  --patch_len 12 \
+  --separate_ratio 1
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1_384_192 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 384 \
+  --label_len 0 \
+  --pred_len 192 \
+  --enc_in 7 \
+  --des 'Exp' \
+  --d_model 256 \
+  --d_ff 512 \
+  --itr 1 \
+  --num_latents 8 \
+  --latent_dim 128 \
+  --latent_d_ff 256 \
+  --dropout 0.2 \
+  --standard 0 \
+  --generalized 1 \
+  --use_latent 1 \
+  --num_latent_blocks 1 \
+  --patch_len 12 \
+  --separate_ratio 1
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1_384_336 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 384 \
+  --label_len 0 \
+  --pred_len 336 \
+  --enc_in 7 \
+  --des 'Exp' \
+  --d_model 256 \
+  --d_ff 512 \
+  --itr 1 \
+  --num_latents 32 \
+  --latent_dim 256 \
+  --latent_d_ff 512 \
+  --dropout 0.2 \
+  --standard 0 \
+  --generalized 1 \
+  --use_latent 1 \
+  --num_latent_blocks 1 \
+  --patch_len 12 \
+  --separate_ratio 0.5
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1_384_720 \
+  --model $model_name \
+  --data ETTh1 \
+  --features M \
+  --seq_len 384 \
+  --label_len 0 \
+  --pred_len 720 \
+  --enc_in 7 \
+  --des 'Exp' \
+  --d_model 256 \
+  --d_ff 512 \
+  --itr 1 \
+  --num_latents 32 \
+  --latent_dim 256 \
+  --latent_d_ff 1024 \
+  --dropout 0.2 \
+  --standard 0 \
+  --generalized 1 \
+  --use_latent 1 \
+  --num_latent_blocks 1 \
+  --patch_len 16 \
+  --separate_ratio 0
