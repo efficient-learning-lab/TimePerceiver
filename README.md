@@ -2,6 +2,8 @@
 
 This repository is the official implementation of TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting.
 
+---
+
 ## Introduction
 
 We propose **TimePerceiver**, a unified encoder-decoder forecasting framework paired with an effective training strategy. Specifically, we generalize the forecasting task to encompass diverse temporal prediction objectives, including extrapolation, interpolation, and imputation.
@@ -10,12 +12,16 @@ We propose **TimePerceiver**, a unified encoder-decoder forecasting framework pa
 <img src="./figures/formulation.png"  alt="" align=center />
 </p>
 
+---
+
 ## Overall Architecture
 We design a novel encoder-decoder architecture that can flexibly perceive and adapt to varying input–target positions along the temporal axis. This design is particularly suitable for handling the generalized formulation of forecasting, where input and target segments may be arbitrarily positioned.  
 
 <p align="center">
 <img src="./figures/architecture.png"  alt="" align=center />
 </p>
+
+---
 
 ## Requirements
 
@@ -27,6 +33,8 @@ pip install -r requirements.txt
 
 We use the publicly available ETT, Weather, Solar, ECL, and Traffic datasets exactly as described in the paper. You can download these datasets from the following repository: [https://github.com/thuml/iTransformer](https://github.com/thuml/iTransformer)
 For detailed information about each dataset, please refer to Appendix A of the paper.
+
+---
 
 ## Train and Evaluate
 
@@ -52,6 +60,7 @@ bash ./scripts/ECL/TimePerceiver.sh
 # Traffic
 bash ./scripts/Traffic/TimePerceiver.sh
 ```
+---
 
 ## Experiments
 We conduct extensive experiments that demonstrate our framework consistently and significantly outperforms prior state-of-the-art baselines across a wide range of benchmark datasets. Furthermore, through comprehensive ablation studies, we validate the effectiveness of our design and provide insights into how it operates.
@@ -80,6 +89,19 @@ We analyze how the key components, latent variables and decoder queries, attend 
 <img src="./figures/attention_analysis.png"  alt="" align=center />
 </p>
 
+---
+
+## Citation
+
+```bibtex
+@inproceedings{lee2025timeperceiver,
+  title={TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting},
+  author={Lee, Jaebin and Lee, Hankook},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+  year={2025}
+}
+```
+---
 
 ## Acknowledgement
 We sincerely thank the authors for providing high-quality open-source code.
@@ -87,6 +109,8 @@ We sincerely thank the authors for providing high-quality open-source code.
 - [Time-Series-Library](https://github.com/thuml/Time-Series-Library)  
 - [iTransformer](https://github.com/thuml/iTransformer)  
 - [DeformableTST](https://github.com/luodhhh/DeformableTST)
+
+---
 
 ## Contact
 If you have any questions, please feel free to reach out:
